@@ -48,7 +48,7 @@ Proof of this fact
 
 We can prove this equality through several steps of algebra.  Every step is just a rearrangement of terms.
 
-$$\begin{array}{l}\sum\limits_{I = 1}^N { {D_{ {X_I} } } }  = \sum\limits_{I = 1}^N {\left( { {X_I} - {\mu_X} } \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - \sum\limits_{I = 1}^N { {\mu_X} } \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N\left( {\frac{ {\sum\limits_{I = 1}^N { {X_I} } } }{N} } \right) - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N{\mu_X} - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
+$$\begin{array}{l}\sum\limits_{I = 1}^N { {D_{ {X_I} } } }  = \sum\limits_{I = 1}^N {\left( { {X_I} - {\mu_X} } \right)} \\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - \sum\limits_{I = 1}^N { {\mu_X} } \\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - N{\mu_X}\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N\left( {\frac{ {\sum\limits_{I = 1}^N { {X_I} } } }{N} } \right) - N{\mu_X}\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N{\mu_X} - N{\mu_X}\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
 
 Definition: The population mean absolute deviation of a QVAR
 
@@ -112,7 +112,7 @@ Proof of this fact
 
 We can prove this equality through several steps of algebra.  Every step is just a rearrangement of terms.
 
-$$\begin{array}{l}\sum\limits_{i = 1}^n { {d_{ {X_i} } } }  = \sum\limits_{i = 1}^n {\left( { {x_i} - \bar x} \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n { {x_i} }  - \sum\limits_{i = 1}^n {\bar x} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n { {x_i} }  - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\left( {\frac{ {\sum\limits_{i = 1}^n { {x_i} } } }{n} } \right) - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\bar x - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
+$$\begin{array}{l}\sum\limits_{i = 1}^n { {d_{ {X_i} } } }  = \sum\limits_{i = 1}^n {\left( { {x_i} - \bar x} \right)} \\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n { {x_i} }  - \sum\limits_{i = 1}^n {\bar x} \\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n { {x_i} }  - n\bar x\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\left( {\frac{ {\sum\limits_{i = 1}^n { {x_i} } } }{n} } \right) - n\bar x\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\bar x - n\bar x\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
 
 Definition: The sample mean absolute deviation of a QVAR
 
