@@ -18,15 +18,15 @@ For $I = 1,...,N$, ${X_I}$ is the value of $X$ for elements $I$.
 
 Definition: The population mean of a QVAR
 
-The **_population mean of a QVAR_** $X$ is represented by the symbol ${\mu _X}$ , and defined as
+The **_population mean of a QVAR_** $X$ is represented by the symbol ${\mu_X}$ , and defined as
 
-${\mu _X} = \frac{ {\sum\limits_{I = 1}^N { {X_I} } } }{N}$             
+${\mu_X} = \frac{ {\sum\limits_{I = 1}^N { {X_I} } } }{N}$             
 
 Definition: A deviation from the population mean of a QVAR for a given element
 
 A **_deviation from the population mean of a QVAR_** $X$ **_for a given element_** is the difference between the value of $X$ for the given element and the population mean of $X.$  The deviation from the population mean of $X$ for element $I$is represented by the symbol ${D_{ {X_I} }}$:
 
-            ${D_{ {X_I} }} = {X_I} - {\mu _X}$
+            ${D_{ {X_I} }} = {X_I} - {\mu_X}$
 
 Fact
 
@@ -42,31 +42,31 @@ $\sum\limits_{I = 1}^N { {D_{ {X_I} }} }  = 0$
 
 or equivalently,
 
-$\sum\limits_{I = 1}^N {\left( { {X_I} - {\mu _X} } \right)}  = 0$
+$\sum\limits_{I = 1}^N {\left( { {X_I} - {\mu_X} } \right)}  = 0$
 
 Proof of this fact
 
 We can prove this equality through several steps of algebra.  Every step is just a rearrangement of terms.
 
-$$\begin{array}{l}\sum\limits_{I = 1}^N { {D_{ {X_I} }} }  = \sum\limits_{I = 1}^N {\left( { {X_I} - {\mu _X} } \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - \sum\limits_{I = 1}^N { {\mu _X} } \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - N{\mu _X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N\left( {\frac{ {\sum\limits_{I = 1}^N { {X_I} } } }{N} } \right) - N{\mu _X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N{\mu _X} - N{\mu _X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
+$$\begin{array}{l}\sum\limits_{I = 1}^N { {D_{ {X_I} }} }  = \sum\limits_{I = 1}^N {\left( { {X_I} - {\mu_X} } \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - \sum\limits_{I = 1}^N { {\mu_X} } \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N\left( {\frac{ {\sum\limits_{I = 1}^N { {X_I} } } }{N} } \right) - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N{\mu_X} - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
 
 Definition: The population mean absolute deviation of a QVAR
 
 The **_population mean absolute deviation_** **_of a QVAR_** $X$ is represented by the symbol $$MA{D_X}$$, and defined as
 
-$$MA{D_X} = \frac{ {\sum\limits_{I = 1}^N {\left| { {X_I} - {\mu _X} } \right|} } }{N}$$       
+$$MA{D_X} = \frac{ {\sum\limits_{I = 1}^N {\left| { {X_I} - {\mu_X} } \right|} } }{N}$$       
 
 Definition: The population variance of a QVAR
 
-The **_population variance_** **_of a QVAR_** $X$ is represented by the symbol $$\sigma _X^2$$, and defined as
+The **_population variance_** **_of a QVAR_** $X$ is represented by the symbol $$\sigma_X^2$$, and defined as
 
-$$\sigma _X^2 = \frac{ {\sum\limits_{I = 1}^N { { {\left( { {X_I} - {\mu _X} } \right)}^2} } } }{N}$$    
+$$\sigma_X^2 = \frac{ {\sum\limits_{I = 1}^N { { {\left( { {X_I} - {\mu_X} } \right)}^2} } } }{N}$$    
 
 Definition: The population standard deviation of a QVAR
 
-The **_population standard deviation_** **_of a QVAR_** $X$ is represented by the symbol $${\sigma _X}$$, and defined as
+The **_population standard deviation_** **_of a QVAR_** $X$ is represented by the symbol $${\sigma_X}$$, and defined as
 
-$${\sigma _X} = \sqrt[ + ]{ {\sigma _X^2} }$$
+$${\sigma_X} = \sqrt[ + ]{ {\sigma_X^2} }$$
 
 **II. QUANTITATIVE VARIABLES IN SAMPLES**
 
