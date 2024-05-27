@@ -24,9 +24,9 @@ ${\mu_X} = \frac{ {\sum\limits_{I = 1}^N { {X_I} } } }{N}$           �
 
 Definition: A deviation from the population mean of a QVAR for a given element
 
-A **_deviation from the population mean of a QVAR_** $X$ **_for a given element_** is the difference between the value of $X$ for the given element and the population mean of $X.$  The deviation from the population mean of $X$ for element $I$is represented by the symbol ${D_{ {X_I} }}$:
+A **_deviation from the population mean of a QVAR_** $X$ **_for a given element_** is the difference between the value of $X$ for the given element and the population mean of $X.$  The deviation from the population mean of $X$ for element $I$is represented by the symbol ${D_{ {X_I} } }$:
 
-            ${D_{ {X_I} }} = {X_I} - {\mu_X}$
+            ${D_{ {X_I} } } = {X_I} - {\mu_X}$
 
 Fact
 
@@ -38,7 +38,7 @@ This is true no matter how many elements there are in the population and no matt
 
 More formally:  Given a finite population consisting of any number $N$ of elements, and given any values ${X_1},\,{X_2},\,...,\,{X_N}$ of a QVAR $X$,
 
-$\sum\limits_{I = 1}^N { {D_{ {X_I} }} }  = 0$
+$\sum\limits_{I = 1}^N { {D_{ {X_I} } } }  = 0$
 
 or equivalently,
 
@@ -48,7 +48,7 @@ Proof of this fact
 
 We can prove this equality through several steps of algebra.  Every step is just a rearrangement of terms.
 
-$$\begin{array}{l}\sum\limits_{I = 1}^N { {D_{ {X_I} }} }  = \sum\limits_{I = 1}^N {\left( { {X_I} - {\mu_X} } \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - \sum\limits_{I = 1}^N { {\mu_X} } \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N\left( {\frac{ {\sum\limits_{I = 1}^N { {X_I} } } }{N} } \right) - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N{\mu_X} - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
+$$\begin{array}{l}\sum\limits_{I = 1}^N { {D_{ {X_I} } } }  = \sum\limits_{I = 1}^N {\left( { {X_I} - {\mu_X} } \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - \sum\limits_{I = 1}^N { {\mu_X} } \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N { {X_I} }  - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N\left( {\frac{ {\sum\limits_{I = 1}^N { {X_I} } } }{N} } \right) - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N{\mu_X} - N{\mu_X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
 
 Definition: The population mean absolute deviation of a QVAR
 
@@ -92,9 +92,9 @@ $\bar x = \frac{ {\sum\limits_{i = 1}^n { {x_i} } } }{n}$            
 
 Definition: A deviation from the sample mean of a QVAR for a given observation
 
-A **_deviation from the sample mean of a QVAR_** $X$ **_for a given observation_** is the difference between the value of $X$ for the given observation and the population mean of $X$.  The deviation from the sample mean of $Q$ for observation $i$ is represented by the symbol ${d_{ {X_i} }}$:
+A **_deviation from the sample mean of a QVAR_** $X$ **_for a given observation_** is the difference between the value of $X$ for the given observation and the population mean of $X$.  The deviation from the sample mean of $Q$ for observation $i$ is represented by the symbol ${d_{ {X_i} } }$:
 
-            ${d_{ {X_i} }} = {x_i} - \bar x$
+            ${d_{ {X_i} } } = {x_i} - \bar x$
 
 Fact
 
@@ -106,13 +106,13 @@ This is true no matter how many observations there are in the sample and no matt
 
 More formally:  Given a sample consisting of any number $n$ of observations, and given any values ${x_1},\,{x_2},\,...,\,{x_n}$ of a QVAR $X$,
 
-$\sum\limits_{i = 1}^n { {d_{ {X_i} }} }  = 0$
+$\sum\limits_{i = 1}^n { {d_{ {X_i} } } }  = 0$
 
 Proof of this fact
 
 We can prove this equality through several steps of algebra.  Every step is just a rearrangement of terms.
 
-$$\begin{array}{l}\sum\limits_{i = 1}^n { {d_{ {X_i} }} }  = \sum\limits_{i = 1}^n {\left( { {x_i} - \bar x} \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n { {x_i} }  - \sum\limits_{i = 1}^n {\bar x} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n { {x_i} }  - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\left( {\frac{ {\sum\limits_{i = 1}^n { {x_i} } } }{n} } \right) - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\bar x - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
+$$\begin{array}{l}\sum\limits_{i = 1}^n { {d_{ {X_i} } } }  = \sum\limits_{i = 1}^n {\left( { {x_i} - \bar x} \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n { {x_i} }  - \sum\limits_{i = 1}^n {\bar x} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n { {x_i} }  - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\left( {\frac{ {\sum\limits_{i = 1}^n { {x_i} } } }{n} } \right) - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\bar x - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}$$
 
 Definition: The sample mean absolute deviation of a QVAR
 
