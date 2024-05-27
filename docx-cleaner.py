@@ -1,75 +1,108 @@
-import docx
-import sympy as sp
-import re
+import subprocess
 import os
+import re
+import pypandoc
+
+# Define the directory where the files are located
+directory = "C:/Users/Connor/Desktop/docx-cleaner/INPUT"
+
+# Change to the specified directory
+os.chdir(directory)
+
+# Define the pandoc command
+command = ["pandoc", "-s", "ptesting.docx", "-t", "markdown", "-o", "pandocTesting.md"]
+
+# Run the command
+result = subprocess.run(command, capture_output=True, text=True)
+
+# Print the output and errors (if any)
+print("Output:", result.stdout)
+print("Errors:", result.stderr)
+
+##########################################################################
+##########################################################################
+
+def replace_latex_delimiters(text):
+    # Replace \[ ... \] with $$ ... $$
+    text = re.sub(r'\\\[(.*?)\\\]', r'$$\1$$', text, flags=re.DOTALL)
+    # Replace \( ... \) with $ ... $
+    text = re.sub(r'\\\((.*?)\\\)', r'$\1$', text, flags=re.DOTALL)
+    return text
 
 
-def extract_office_math(doc_path):
-    doc = docx.Document(doc_path)
-    equations = []
-
-    # Iterate through paragraphs and table cells
-    for paragraph in doc.paragraphs:
-        if paragraph.text:
-            equations.append(paragraph.text.strip())
-
-    for table in doc.tables:
-        for row in table.rows:
-            for cell in row.cells:
-                if cell.text:
-                    equations.append(cell.text.strip())
-
-    return equations
+def replace_double_curly_braces(text):
+    # Replace {{ with { { and }} with } }
+    text = text.replace('{{', '{ {').replace('}}', '} }')
+    return text
 
 
-def office_math_to_latex(office_math_expr):
-    # Replace the Office Math specific notation with sympy compatible notation
-    office_math_expr = office_math_expr.replace('∑', 'Sum').replace('▒', '').replace('√', 'sqrt')
-
-    # Handle fractions
-    office_math_expr = re.sub(r'(\d+)/(\d+)', r'\\frac{\1}{\2}', office_math_expr)
-
-    # Regular expression to find and replace subscript/superscript notation
-    office_math_expr = re.sub(r'_(\{[^\}]+\}|\w)', r'_\1', office_math_expr)
-    office_math_expr = re.sub(r'\^(\{[^\}]+\}|\w)', r'^\1', office_math_expr)
-
-    # Check if the expression is empty or whitespace only
-    if not office_math_expr.strip():
-        return "Empty or invalid expression"
-
-    # Define the symbols used in the expression
-    i, N = sp.symbols('i N')
-    X_i = sp.Function('X_i')
-
-    # Convert the expression to a sympy expression
-    try:
-        expr = sp.sympify(office_math_expr, locals={'X_i': X_i(i), 'Sum': sp.Sum, 'sqrt': sp.sqrt})
-    except Exception as e:
-        return f"Error parsing expression: {office_math_expr}. Error: {e}"
-
-    # Convert the sympy expression to LaTeX
-    latex_expr = sp.latex(expr)
-
-    return latex_expr
+def replace_double_backslashes(text):
+    # Replace \\ with \
+    text = text.replace('\\\\', '\\')
+    return text
 
 
-def convert_docx_to_latex(doc_path):
-    if not os.path.exists(doc_path):
-        print(f"File not found: {doc_path}")
-        return []
+def remove_unnecessary_braces(latex):
+    # Regex pattern to match unnecessary curly braces around single variables
+    pattern = r'\{([a-zA-Z0-9_]+)\}'
 
-    equations = extract_office_math(doc_path)
-    latex_equations = []
+    # Substitute the matched pattern with the captured group (i.e., removing the braces)
+    cleaned_latex = re.sub(pattern, r'\1', latex)
 
-    for eq in equations:
-        latex_eq = office_math_to_latex(eq)
-        latex_equations.append(latex_eq)
-
-    return latex_equations
+    return cleaned_latex
 
 
-doc_path = r'C:\Users\Connor\Desktop\Summer 2024 Econ\OfficeMathRoute\OM - Copy.docx'  # Use raw string to avoid escape character issues
-latex_equations = convert_docx_to_latex(doc_path)
+def read_md(file_path):
+    # Read the Markdown file
+    with open(file_path, 'r', encoding='utf-8') as file:
+        text = file.read()
 
-for latex_eq in latex_equations:
-    print(latex_eq)
+    return text
+
+
+def process_latex_in_text(text):
+    # Regex pattern to find LaTeX equations in text
+    latex_pattern = r'\$\$.*?\$\$'
+
+    def replace_latex(match):
+        # Remove unnecessary braces in the matched LaTeX equation
+        return remove_unnecessary_braces(match.group(0))
+
+    # Replace LaTeX equations in the text
+    processed_text = re.sub(latex_pattern, replace_latex, text, flags=re.DOTALL)
+
+    return processed_text
+
+
+def save_markdown(file_path, content):
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+
+def main(input_md, output_md):
+    # Read the .md file
+    md_text = read_md(input_md)
+
+    # Replace \[ ... \] with $$ ... $$ and \( ... \) with $ ... $
+    md_text = replace_latex_delimiters(md_text)
+
+    # Replace {{ and }} with { { and } }
+    md_text = replace_double_curly_braces(md_text)
+
+    # Replace \\ with \
+    md_text = replace_double_backslashes(md_text)
+
+    # Process LaTeX equations in the text
+    processed_text = process_latex_in_text(md_text)
+
+    # Ensure double newlines after headings and paragraphs for proper formatting
+    markdown_text = re.sub(r'(\n\n+)', r'\n\n', processed_text)
+
+    # Save the processed Markdown content to a file
+    save_markdown(output_md, markdown_text)
+
+if __name__ == '__main__':
+    input_md = 'C:/Users/Connor/Desktop/docx-cleaner/INPUT/pandocTesting.md'  # Path to your input .md file
+    output_md = "C:/Users/Connor/Desktop/docx-cleaner/OUTPUT/output.md"  # Path to your output .md file
+
+    main(input_md, output_md)
